@@ -1,6 +1,6 @@
 module TFF(input clk, rst, input [4:0] t, output reg [4:0] q, qn);
 always@(posedge clk or posedge rst) begin
 if(rst) begin q <= 'b0; qn <= 5'b11111; end
-else if(|t) begin q <= q ^ t; qn <= ~(q ^ t) ; end
+else begin q <= q ^ t; qn <= ~(q ^ t) ; end
 end
 endmodule
